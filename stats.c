@@ -25,7 +25,6 @@
 
 /* Size of the Data Set */
 #define SIZE (40)
-#define SIZE_2 (6)
 
 void main()
 {
@@ -144,11 +143,6 @@ unsigned char find_maximum(unsigned char *ptr, unsigned int size)
   if (ptr == NULL)
   {
     return 0;
-  }
-
-  if (size <= 0)
-  {
-    size = 1;
   }
 
   return *ptr;
