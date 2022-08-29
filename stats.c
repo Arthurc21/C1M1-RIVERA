@@ -34,7 +34,7 @@ void main()
                               200, 122, 150, 90, 92, 87, 177, 244,
                               201, 6, 12, 60, 8, 2, 5, 67,
                               7, 87, 250, 230, 99, 3, 100, 90};
-  
+
   double mean, median;
 
   print_array(test, SIZE);
@@ -81,6 +81,16 @@ void print_array(unsigned char *ptr, unsigned int size)
 
 double find_median(unsigned char *ptr, unsigned int size)
 {
+  if (ptr == NULL)
+  {
+    return 0;
+  }
+
+  if (size <= 0)
+  {
+    size = 1;
+  }
+
   double median;
   int half;
   if (size % 2 == 0)
@@ -99,6 +109,16 @@ double find_median(unsigned char *ptr, unsigned int size)
 
 double find_mean(unsigned char *ptr, unsigned int size)
 {
+  if (ptr == NULL)
+  {
+    return 0;
+  }
+
+  if (size <= 0)
+  {
+    size = 1;
+  }
+
   double sum, sizeLargeFloat = (double)size;
   if (ptr == NULL)
   {
@@ -121,16 +141,46 @@ double find_mean(unsigned char *ptr, unsigned int size)
 
 unsigned char find_maximum(unsigned char *ptr, unsigned int size)
 {
+  if (ptr == NULL)
+  {
+    return 0;
+  }
+
+  if (size <= 0)
+  {
+    size = 1;
+  }
+
   return *ptr;
 }
 
 unsigned char find_minimum(unsigned char *ptr, unsigned int size)
 {
+  if (ptr == NULL)
+  {
+    return 0;
+  }
+
+  if (size <= 0)
+  {
+    size = 1;
+  }
+
   return *(ptr + (size - 1));
 }
 
 void sort_array(unsigned char *ptr, unsigned int size)
 {
+  if (ptr == NULL)
+  {
+    return;
+  }
+
+  if (size <= 0)
+  {
+    size = 1;
+  }
+
   int i, j, temp;
   int current, next;
   for (i = 0; i < size; i++)
