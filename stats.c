@@ -197,4 +197,15 @@ void sort_array(unsigned char *ptr, unsigned int size)
       }
     }
   }
+
+  printf("\n\t=====Sorted=====\n\n");
+  for (i = 0; i < size; i++)
+  {
+    printf("%4d", *ptr);
+    ptr++;
+    if ((i + 1) % 8 == 0)
+    {
+      printf("\n");
+    }
+  }
 }
